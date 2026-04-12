@@ -1,0 +1,175 @@
+# Exercícios de Inteligência Artificial – Resolução
+
+---
+
+## 1. Importância da Preparação de Dados
+
+A etapa de preparação de dados é fundamental porque influencia diretamente a qualidade do aprendizado do modelo. Dados inconsistentes, com valores ausentes, ruídos ou desbalanceamento, podem levar o modelo a aprender padrões incorretos.
+
+Mesmo algoritmos avançados não conseguem compensar dados mal preparados. Por isso, um bom pré-processamento pode gerar melhores resultados do que simplesmente trocar o algoritmo.
+
+---
+
+## 2. Valores Ausentes
+
+### a) Estratégias para tratamento:
+
+* Remoção de registros (quando poucos dados estão ausentes)
+* Preenchimento com:
+
+  * Média ou mediana (dados numéricos)
+  * Moda (dados categóricos)
+* Técnicas avançadas:
+
+  * KNN Imputation
+  * Modelos de regressão
+* Criação de variável indicadora de ausência
+
+### b) Quando remover registros é inadequado:
+
+* Quando há grande quantidade de dados ausentes (ex: 25%)
+* Quando o dataset é pequeno
+* Quando os dados ausentes são relevantes
+
+---
+
+## 3. Normalização vs Padronização
+
+### Normalização (Min-Max)
+
+* Escala os dados entre 0 e 1
+* Sensível a outliers
+
+### Padronização (Z-score)
+
+* Média igual a 0 e desvio padrão igual a 1
+* Mais robusta a outliers
+
+### Aplicação:
+
+* Normalização: KNN, redes neurais
+* Padronização: regressão, SVM
+
+---
+
+## 4. Dados Categóricos
+
+### a) Transformação:
+
+* One-Hot Encoding
+* Label Encoding (em casos específicos)
+
+### b) Problema da codificação numérica simples:
+
+Atribuir valores como 0, 1 e 2 cria uma relação de ordem inexistente entre categorias, o que pode prejudicar o modelo.
+
+---
+
+## 5. Overfitting e Separação de Dados
+
+### Divisão:
+
+* Treino: aprendizado do modelo
+* Validação: ajuste de parâmetros
+* Teste: avaliação final
+
+### Problema de usar dados de teste no treino:
+
+Causa vazamento de dados (data leakage), levando a resultados irreais e baixa generalização.
+
+---
+
+## 6. Balanceamento de Classes
+
+### a) Problema:
+
+Modelos tendem a prever apenas a classe majoritária, ignorando a minoritária.
+
+### b) Técnicas:
+
+* Oversampling (ex: SMOTE)
+* Undersampling
+* Ajuste de pesos das classes
+
+---
+
+## 7. Detecção de Outliers
+
+### a) Definição:
+
+Valores que fogem significativamente do padrão dos dados.
+
+### b) Quando remover pode prejudicar:
+
+* Quando representam casos reais importantes
+* Ex: fraudes ou eventos raros
+
+### c) Método estatístico:
+
+* Intervalo Interquartil (IQR)
+* Z-score
+
+---
+
+## 8. Feature Engineering
+
+Criar a variável “idade” a partir de “data_nascimento” é mais eficiente porque:
+
+* Simplifica o aprendizado do modelo
+* Remove complexidade de manipulação de datas
+* Representa diretamente a informação relevante
+
+---
+
+## 9. Pipeline de Pré-processamento
+
+1. Limpeza dos dados
+2. Tratamento de valores ausentes
+3. Codificação de variáveis categóricas
+4. Tratamento de outliers
+5. Normalização ou padronização
+6. Balanceamento de classes
+7. Separação em treino, validação e teste
+
+---
+
+## 10. Estudo de Caso Aplicado
+
+### Etapas de preparação:
+
+1. Análise exploratória dos dados
+
+2. Tratamento de valores ausentes:
+
+   * idade: mediana
+   * renda_mensal: média
+   * estado_civil: moda
+
+3. Codificação:
+
+   * estado_civil com One-Hot Encoding
+
+4. Tratamento de outliers:
+
+   * renda_mensal com método IQR
+
+5. Feature engineering:
+
+   * manter número de dependentes
+   * transformar histórico de inadimplência em variável binária
+
+6. Padronização:
+
+   * idade e renda
+
+7. Balanceamento:
+
+   * uso de SMOTE ou ajuste de pesos
+
+8. Divisão:
+
+   * treino, validação e teste
+
+---
+
+**Fim do documento**
