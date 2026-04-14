@@ -1,0 +1,76 @@
+﻿Trabalho - Modelos Probabilísticos (Naive Bayes e Rede Bayesiana)
+Vinícius Chaves|
+
+EXERCÍCIO 1 - TABELAS E PROBABILIDADES (LAPLACE α=1)
+
+
+Classes:
+- nenhuma = 3
+- gelatinosa = 8
+- dura = 4
+Total = 15
+
+
+Priors:
+P(nenhuma) = 4/18 = 0.222
+P(gelatinosa) = 9/18 = 0.5
+P(dura) = 5/18 = 0.278
+
+
+
+
+EXERCÍCIO 2 - CLASSIFICAÇÃO (NAIVE BAYES)
+
+
+Paciente:
+idade = infantil
+diagnóstico = hipermetropia
+astigmatismo = não
+taxa lacrimal = reduzida
+
+
+Resultados:
+nenhuma = 0.50
+gelatinosa = 0.43
+dura = 0.06
+
+
+Classe prevista: NENHUMA
+
+
+
+
+EXERCÍCIO 3 - REDE BAYESIANA
+
+
+Estrutura:
+Classe -> Idade
+Classe -> Diagnóstico
+Classe -> Astigmatismo
+Classe -> Taxa lacrimal
+Idade -> Taxa lacrimal
+
+
+Todas as probabilidades foram suavizadas com Laplace (α=1).
+
+
+
+
+EXERCÍCIO 4 - RECLASSIFICAÇÃO
+
+
+Considerando a dependência entre Idade e Taxa Lacrimal,
+a classe mais provável continua sendo:
+
+
+Classe prevista: NENHUMA
+
+
+
+
+CONCLUSÃO
+
+
+O modelo Naive Bayes e a Rede Bayesiana chegaram ao mesmo resultado
+para o paciente analisado. A classe mais provável é "nenhuma",
+indicando que o paciente não deve usar lentes de contato.
