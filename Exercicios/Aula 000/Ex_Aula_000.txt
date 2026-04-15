@@ -1,0 +1,14 @@
+exAula_00
+Software + problema (1 frase):
+Sistema de gestão financeira para pequenos e médios negócios precisa identificar fraudes, erros operacionais e desvios financeiros que passam despercebidos em análises tradicionais.
+
+Funcionalidade de IA (o que faz) + entrada/saída:
+Detectar automaticamente anomalias em transações financeiras e operacionais com base no comportamento histórico do negócio.
+Entrada: dados de vendas, funcionários, formas de pagamento, cancelamentos, valores, horários, histórico de transações, ticket médio e volume por período.
+Saída: (1) alertas de transações anômalas, (2) score de anomalia por evento, (3) identificação de padrões suspeitos (ex.: funcionário, turno ou operação), (4) relatórios interpretáveis para investigação.
+
+Técnica provável:
+Detecção de anomalias (ex.: Isolation Forest, LOF, Z-score, Autoencoders)
+
+Métrica de sucesso (como medir):
+Taxa de detecção de anomalias reais (precision/recall) + redução de perdas financeiras + diminuição de fraudes/erros não detectados.
